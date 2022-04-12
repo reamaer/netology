@@ -1,3 +1,5 @@
+import random
+
 HELP = """
 help - output help for the program
 add - adding task to list (task name request from user)
@@ -5,7 +7,7 @@ show - print all tasks
 random - add random task to today list
 """
 
-RANDOM_TASK = 'Watch TV'
+RANDOM_TASKS = ['Watch TV', 'Go outside', 'Get rest', 'Car wash']
 
 tasks = {
 
@@ -36,7 +38,8 @@ while True:
         task = input('Input task name: ')
         add_todo(date_task, task)
     elif command == str('random'):
-        add_todo('today', RANDOM_TASK)
+        task = random.choice(RANDOM_TASKS)
+        add_todo('today', task)
     else:
         if command == 'exit':
             print('Thanks for using! Good bye!')
