@@ -1,14 +1,15 @@
 words_array = ['developer', 'settings', 'contributions', 'profile', 'organizations']
-letter = 'o'
+letter = "r"
 
 
-def count_letter(array):
+def count_letter(array, letter):
+    count = 0
     for word in array:
-        count = 0
-        for i in word:
-            if i == letter:
-                count += 1
-        print(count)
+        print(word)
+        char = letter
+        if char in word:
+            count += 1
+    print(f'The number of words with the \"{letter}\" in the list {array} - {count}')
 
 
-count_letter(words_array)
+count_letter(words_array, letter)
